@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-alphine-pod
+  namespace: sowji-namespace
+  labels:
+    tier: msg
+spec:
+  containers: 
+    - name: message-redis-container
+      image: redis:alpine

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  namespace: sowji-namespace
+  labels:
+    type: alphine-nginx-pod
+spec:
+  containers:
+    - name: mynginx
+      image: nginx:alpine
+      ports:
+        - containerPort: 8080

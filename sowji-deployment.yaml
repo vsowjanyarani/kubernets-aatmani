@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sowji-deployment
+  namespace: sowji
+  labels:
+    app: sowji-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sowji-nginx
+  template:
+    metadata:
+      labels:
+        app: sowji-nginx
+    spec:
+      containers:
+      - name: nginx-deploy
+        image: nginx
+        ports:
+        - containerPort: 88
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "100M"

@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hr-web-app
+  namespace: sowji-namespace
+  labels:
+    app: sowji-kodekloud
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+     app: sowji-kodekloud
+  template:
+    metadata:
+      labels:
+        app: sowji-kodekloud
+    spec:
+      containers:
+        - name: web-app 
+          image: kodekloud/webapp-color
+          ports:
+            - containerPort: 80

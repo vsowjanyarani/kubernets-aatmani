@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: temp-bus
+  namespace: finance-sowji
+  labels:
+    app: redis-pod
+spec:
+  selector:
+    matchLabels:
+      app: redis-pod
+  templates:
+     spec:
+       containers:
+         - name: temp-bus
+           image: redis:alpine
+           ports: 
+             - containerPort: 84
