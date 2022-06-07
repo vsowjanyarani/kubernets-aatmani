@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata: 
+ name: db-secret-xxdf
+ type: Opaque
+ data:
+   db_host: sql01
+   db_user: root
+   db_passowrd: password123
